@@ -1,0 +1,23 @@
+{
+  "name": "lit-bot-javascript",
+  "version": "1.0.0",
+  "description": "lit bot",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "snekfetch": "^3.1.11",
+    "youtube-node": "^1.3.0",
+    "youtube-search": "^1.0.10",
+    "ytdl-core": "^0.14.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thomas",
+  "license": "ISC"
+  },
+"engines": {
+	"node": "8.1.2"
+ }
+}
