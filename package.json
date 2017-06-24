@@ -2,6 +2,9 @@
   "name": "lit-bot-javascript",
   "version": "1.0.0",
   "description": "lit bot",
+   "engines": {
+     "node": "8.1.2"
+  },
   "main": "bot.js",
   "dependencies": {
     "discord.js": "^11.1.0",
@@ -12,12 +15,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bot.js"
   },
-  "author": "thomas",
-  "license": "ISC"
-  },
-"engines": {
-	"node": "8.1.2"
- }
+  "author": "thomas"
 }
