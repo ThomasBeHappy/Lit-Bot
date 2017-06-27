@@ -124,8 +124,8 @@ client.on('message', m => {
  }
 });
  }
-  if(m.content === "lb.servers") {
-    m.channel.sendMessage(client.guilds.map(g => '`' + `${g.name} | ${g.memberCount}` + '`')).catch(console.error);
+  if(m.content === "lb.stats") {
+    m.channel.send(`Here are my stats! \n**Servers:** ${client.guilds.size} \n**Channels**: ${client.channels.size} \n**Users** ${client.users.size}`);
   }
 
   if (m.content === 'lb.getmewater'){
