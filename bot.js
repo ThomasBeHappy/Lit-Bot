@@ -5,6 +5,7 @@ const connections = new Map();
 const exec = require('child_process').exec;
 const tokens = require('./config.json');
 const snekfetch = require('snekfetch')
+const randomanswer = ['Try again later','My vision says no','my vision says yes!','Better not tel you.','For sure!','your really wanna know the answer?'];
 
 let queue = {};
 
@@ -52,7 +53,6 @@ const commands = {
 			dispatcher.on('error', (err) => {
 				return m.channel.sendMessage('error: ' + err).then(() => {
 					collector.stop();
-					play(queue[m.guild.id].songs.shift());
 				});
 			});
 		})(queue[m.guild.id].songs.shift());
@@ -127,8 +127,11 @@ client.on('message', m => {
   if(m.content === "lb.stats") {
     m.channel.send(`Here are my stats! \n**Servers:** ${client.guilds.size} \n**Channels**: ${client.channels.size} \n**Users** ${client.users.size}`);
   }
+	if(m.content.startsWith("lb.8ball")) {
+    m.reply('' + randomanswer[Math.floor(Math.random()*randomanswer.length)])
+  }
 
-  if (m.content === 'lb.getmewater'){
+  if (m.content === 'lb.getmewater') {
     console.log(`${m.author.username} did something`);
     m.channel.send('Here is your water!', {file:'water.jpg'} )
   }
