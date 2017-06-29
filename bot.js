@@ -133,6 +133,11 @@ client.on('message', m => {
 		let perms = m.member.permissions;
 		if (m.member.hasPermission("KICK_MEMBERS")) {
 			let userToKick = m.mentions.users.first()
+			if (!userToKick) {
+				return m.reply('Thats not a valid user!')
+			}
+			else {
+
 			m.guild.member(userToKick).kick().catch(console.error);
 			m.reply("Succesfully kicked" + userToKick + '!')
 		}
