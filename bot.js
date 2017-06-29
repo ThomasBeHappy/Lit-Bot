@@ -53,6 +53,7 @@ const commands = {
 			dispatcher.on('error', (err) => {
 				return m.channel.sendMessage('error: ' + err).then(() => {
 					collector.stop();
+					play(queue[m.guild.id].songs.shift());
 				});
 			});
 		})
