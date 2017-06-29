@@ -55,7 +55,7 @@ const commands = {
 					collector.stop();
 				});
 			});
-		})(queue[m.guild.id].songs.shift());
+		})
 	},
 	'join': (m) => {
 		return new Promise((resolve, reject) => {
