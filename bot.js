@@ -135,13 +135,12 @@ client.on('message', m => {
 			let userToKick = m.mentions.users.first()
 			if (!userToKick) {
 				return m.reply('Thats not a valid user!')
-			}
-			else {
+			} else {
 
 			m.guild.member(userToKick).kick().catch(console.error);
 			m.reply("Succesfully kicked" + userToKick + '!')
 		}
-		else {
+	} else {
 			m.reply('You do not have the permission to kick someone!')
 		}
   }
