@@ -167,4 +167,4 @@ client.on('message', m => {
 	if (commands.hasOwnProperty(m.content.toLowerCase().slice(tokens.prefix.length).split(' ')[0])) commands[m.content.toLowerCase().slice(tokens.prefix.length).split(' ')[0]](m);
 });
 
-client.login('MzI1MzM4NTEzMTUzMTk2MDMy.DCv_6w.1Y40IgQa-QjOObo3JOWrmQhUu3Y');
+client.login(process.env.BOT_TOKEN);
