@@ -56,7 +56,7 @@ const commands = {
 					play(queue[m.guild.id].songs.shift());
 				});
 			});
-		})
+		})(queue[m.guild.id].songs.shift());
 	},
 	'join': (m) => {
 		return new Promise((resolve, reject) => {
