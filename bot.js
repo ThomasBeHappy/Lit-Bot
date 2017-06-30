@@ -93,7 +93,7 @@ const commands = {
 
 client.on('ready', () => {
   console.log('I am ready!');
-  client.user.setGame('Type lb.help for help')
+  client.user.setGame('Type lb.help for help!')
   console.log('Running on ' + client.guilds.size);
   snekfetch.post(`https://discordbots.org/api/bots/${client.user.id}/stats`)
     .set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIyOTU2MzY3NDM3NTc0OTYzMyIsImlhdCI6MTQ5NzcyODcwOX0.H6z0Yga3YESwqtjkqaWWXz4r3imYR5zWQdOCfUbFnBQ')
