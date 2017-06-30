@@ -82,7 +82,7 @@ const commands = {
 		m.channel.sendMessage(`__**${m.guild.name}'s Music Queue:**__ Currently **${tosend.length}** songs queued ${(tosend.length > 15 ? '*[Only next 15 shown]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
 	},
 	'help': (m) => {
-		let tosend = ['```Music Commands', tokens.prefix + 'join | Join Voice channel of m sender',	tokens.prefix + 'add | Add a valid youtube link to the queue', tokens.prefix + 'queue | Shows the current queue, up to 15 songs shown.', tokens.prefix + 'play | Play the music queue if already joined to a voice channel', '', 'the following commands only function while the play command is running:'.toUpperCase(), tokens.prefix + 'pause | pauses the music',	tokens.prefix + 'resume | resumes the music', tokens.prefix + 'skip | skips the playing song', tokens.prefix + 'time | Shows the playtime of the song.',	'volume+(+++) | increases volume by 2%/+',	'volume-(---) | decreases volume by 2%/-', '', 'Other commands','lb.getmewater | Gives you water', 'lb.ping | Shows you the speed of the bot normally used for debugging', 'lb.8ball | The Magical 8ball tells you all', 'lb.kick [user] | Kick a user from the server' ,'lb.ban [user] | Bans the user you provided', 'lb.support | Shows you where to get support about lit bot','```'];
+		let tosend = ['```Music Commands', tokens.prefix + 'join | Join Voice channel of m sender',	tokens.prefix + 'add | Add a valid youtube link to the queue', tokens.prefix + 'queue | Shows the current queue, up to 15 songs shown.', tokens.prefix + 'play | Play the music queue if already joined to a voice channel', '', 'the following commands only function while the play command is running:'.toUpperCase(), tokens.prefix + 'pause | pauses the music',	tokens.prefix + 'resume | resumes the music', tokens.prefix + 'skip | skips the playing song', tokens.prefix + 'time | Shows the playtime of the song.',	'volume+(+++) | increases volume by 2%/+',	'volume-(---) | decreases volume by 2%/-', '', 'Other commands','lb.getmewater | Gives you water', 'lb.ping | Shows you the speed of the bot normally used for debugging', 'lb.8ball | The Magical 8ball tells you all', 'lb.kick [user] | Kick a user from the server' ,'lb.ban [user] | Bans the user you provided', 'lb.support | Shows you where to get support about lit bot', 'lb.invite | invite lit bot to your own server!','```'];
 		m.channel.sendMessage(tosend.join('\n'));
 	},
 	'reboot': (m) => {
@@ -108,8 +108,8 @@ client.on('guildCreate', guild => {
 
 client.on('guildMemberAdd', member => {
 	let guild = member.guild;
-	if (guild.id === 264445053596991498) return;
-	if (guild.id === 110373943822540800) return;
+	if (guild.id === 264445053596991498).catch(console.error) return;
+	if (guild.id === 110373943822540800).catch(console.error) return;
 	else {
 		guild.defaultChannel.send(`Welcome ${member.user} to this server!`);
 	}
@@ -170,7 +170,7 @@ client.on('message', m => {
 			m.reply("Succesfully banned" + userToBan + '!')
 		}
 	} else {
-			m.reply('You do not have the permission to bam someone!')
+			m.reply('You do not have the permission to ban someone!')
 		}
 	}
 
@@ -180,6 +180,10 @@ client.on('message', m => {
 
 	if(m.content.startsWith("lb.support")) {
     m.reply(`Join our support server for any support you want, or just talk to other people! https://discord.gg/RQFVBz2 \n We also discuss about commands that get added to the bot! `)
+  }
+
+	if(m.content.startsWith("lb.invite")) {
+    m.reply(`Invite me to your server!! https://discordapp.com/oauth2/authorize?client_id=325338513153196032&scope=bot&permissions=402128127`)
   }
 
   if (m.content === 'lb.getmewater') {
