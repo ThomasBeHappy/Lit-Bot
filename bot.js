@@ -5,7 +5,7 @@ const connections = new Map();
 const exec = require('child_process').exec;
 const tokens = require('./config.json');
 const snekfetch = require('snekfetch')
-const randomanswer = ['Try again later','My vision says no','my vision says yes!','Better not tel you.','For sure!','your really wanna know the answer?'];
+const randomanswer = ['Try again later','My vision says no','My vision says yes!','Better not tell you.','For sure!','You really wanna know the answer?'];
 
 let queue = {};
 
@@ -147,6 +147,10 @@ client.on('message', m => {
 
 	if(m.content.startsWith("lb.8ball")) {
     m.reply('' + randomanswer[Math.floor(Math.random()*randomanswer.length)])
+  }
+
+	if(m.content.startsWith("lb.support")) {
+    m.reply(`Join our support server for any support you want, or just talk to other people! https://discord.gg/RQFVBz2 \n We also discuss about commands that get added to the bot! `)
   }
 
   if (m.content === 'lb.getmewater') {
