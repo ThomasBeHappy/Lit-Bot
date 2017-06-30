@@ -101,9 +101,15 @@ client.on('ready', () => {
     .then(console.log('Updated dbots.org status.'))
     .catch(e => console.warn('dbots.org down spam @oliy'));
 });
+
 client.on('guildCreate', guild => {
 	console.log(`New guild added: ${guild.name}, Owned by ${guild.owner.user.username}`);
 });
+
+client.on('guildMemberAdd', member => {
+	guild.defaultChannel.send(`Welcome ${member.user} to this server!`);
+});
+
 client.on('message', m => {
   if (!m.guild) return;
 
