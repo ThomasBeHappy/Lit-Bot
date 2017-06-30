@@ -145,6 +145,22 @@ client.on('message', m => {
 		}
   }
 
+	if(m.content.startsWith("lb.ban")) {
+		let perms = m.member.permissions;
+		if (m.member.hasPermission("BAB_MEMBERS")) {
+			let userToBan = m.mentions.users.first()
+			if (!userToBan) {
+				return m.reply('Thats not a valid user!')
+			} else {
+
+			m.guild.member(userToBan).ban(1).catch(console.error);
+			m.reply("Succesfully banned" + userToBan + '!')
+		}
+	} else {
+			m.reply('You do not have the permission to bam someone!')
+		}
+	}
+
 	if(m.content.startsWith("lb.8ball")) {
     m.reply('' + randomanswer[Math.floor(Math.random()*randomanswer.length)])
   }
