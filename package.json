@@ -8,6 +8,7 @@
   "main": "bot.js",
   "dependencies": {
     "discord.js": "^11.1.0",
+    "moment": "^2.18.1",
     "nodemon": "^1.11.0",
     "opusscript": "0.0.3",
     "snekfetch": "^3.1.11",
