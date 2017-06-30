@@ -160,7 +160,7 @@ client.on('message', m => {
 
 	if(m.content.startsWith("lb.ban")) {
 		let perms = m.member.permissions;
-		if (m.member.hasPermission("BAB_MEMBERS")) {
+		if (m.member.hasPermission("BAN_MEMBERS")) {
 			let userToBan = m.mentions.users.first()
 			if (!userToBan) {
 				return m.reply('Thats not a valid user!')
