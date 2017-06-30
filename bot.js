@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const moment = require("moment");
 const client = new Discord.Client({ fetchAllMembers: false, apiRequestMethod: 'sequential' });
 const yt = require('ytdl-core');
 const connections = new Map();
@@ -6,6 +7,8 @@ const exec = require('child_process').exec;
 const tokens = require('./config.json');
 const snekfetch = require('snekfetch')
 const randomanswer = ['Try again later','My vision says no','My vision says yes!','Better not tell you.','For sure!','You really wanna know the answer?'];
+const { version } = require('discord.js');
+require("moment-duration-format")
 
 let queue = {};
 
