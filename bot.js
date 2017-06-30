@@ -139,8 +139,15 @@ client.on('message', m => {
 });
  }
   if(m.content === "lb.stats") {
-    m.channel.send(`Here are my stats! \n**Servers:** ${client.guilds.size} \n**Channels**: ${client.channels.size} \n**Users** ${client.users.size}`);
-  }
+		const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
+    msg.channel.send(`= STATISTICS =
+• Mem Usage  :: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
+• Uptime     :: ${duration}
+• Users      :: ${client.users.size.toLocaleString()}
+• Servers    :: ${client.guilds.size.toLocaleString()}
+• Channels   :: ${client.channels.size.toLocaleString()}
+• Discord.js :: v${version}
+• Node       :: ${process.version}`, {code: "asciidoc"});  }
 
 	if(m.content.startsWith("lb.kick")) {
 		let perms = m.member.permissions;
