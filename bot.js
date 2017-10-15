@@ -117,6 +117,8 @@ client.on('guildMemberAdd', member => {
 		else{
 			guild.defaultChannel.send(`Welcome ${member.user} to this server!`);
 		}
+	}catch (e) {
+		console.log('No Default Channel');
 	}
 });
 
