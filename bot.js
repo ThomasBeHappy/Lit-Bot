@@ -110,11 +110,13 @@ client.on('guildCreate', guild => {
 });
 
 client.on('guildMemberAdd', member => {
-	let guild = member.guild;
-	if (guild.id === '264445053596991498') return;
-	if (guild.id === '110373943822540800') return;
-	else {
-		guild.defaultChannel.send(`Welcome ${member.user} to this server!`);
+	try{
+		let guild = member.guild;
+		if (guild.id === '264445053596991498') return;
+		if (guild.id === '110373943822540800') return;
+		else{
+			guild.defaultChannel.send(`Welcome ${member.user} to this server!`);
+		}
 	}
 });
 
