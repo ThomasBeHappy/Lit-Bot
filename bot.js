@@ -99,7 +99,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: 'Type lb.help for commands!', type: 0 } });
   console.log('Running on ' + client.guilds.size);
   snekfetch.post(`https://discordbots.org/api/bots/${client.user.id}/stats`)
-    .set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNTMzODUxMzE1MzE5NjAzMiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTEzNzkxNDYxfQ.Kk0htBjhABjJWNRkONTxSTk2LWFA8IHMqZ9vB_9aIWI
+    .set('Authorization', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNTMzODUxMzE1MzE5NjAzMiIsImJvdCI6dHJ1ZSwiaWF0IjoxNTEzNzkxNDYxfQ.Kk0htBjhABjJWNRkONTxSTk2LWFA8IHMqZ9vB_9aIWI'
 
 ')
     .send({ server_count: client.guilds.size })
